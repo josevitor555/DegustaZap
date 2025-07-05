@@ -1,0 +1,67 @@
+
+/* @font-face {
+  font-family: 'Nunito';
+  src: url('./fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf') format('truetype'),
+       url('./fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Container Post Social Media like Instagram */
+.container-post__social-media {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.container-post__social-media::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vh;
+  height: 60vh;
+  border-radius: 50%;
+  opacity: .4;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ea5455 60%, #f08182 100%);
+  filter: blur(80px);
+  animation: circleAnimate 2.5s ease-in-out infinite;
+}
+
+@keyframes circleAnimate {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.container-post {
+  background: #e7e9f0;
+  position: relative;
+  z-index: 1000;
+}
+
+body {
+  height: auto;
+  /* font-family: 'Roboto', sans-serif; */
+}
