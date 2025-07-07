@@ -12,12 +12,12 @@ DegustaZap é uma aplicação web feita em React que permite ao usuário escolhe
 ---
 
 ### Funcionalidades (Requisitos funcionais que irei implementar futuramente)
-- Filtro de produtos por categoria (bebidas, salgados, doces, combos)
-- Carrinho com adição, remoção e ajuste de quantidade
-- Preço total atualizado em tempo real
-- Finalização do pedido via WhatsApp com mensagem formatada
-- Login e cadastro com autenticação JWT
-- Futuro assistente virtual com IA para ajudar na navegação e dúvidas
+- [] Filtro de produtos por categoria (bebidas, salgados, doces, combos)
+- [] Carrinho com adição, remoção e ajuste de quantidade
+- [] Preço total atualizado em tempo real
+- [] Finalização do pedido via WhatsApp com mensagem formatada
+- [x] Login e cadastro com MySQL utilizando o JWT
+- [] Futuro assistente virtual com IA para ajudar na navegação e dúvidas
 
 ---
 
