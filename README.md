@@ -29,7 +29,7 @@ DegustaZap é uma aplicação web feita em React que permite ao usuário escolhe
 - [x] React Router Dom (rotas)
 - [x] WhatsApp Web URL API (finalização do pedido)
 - [x] JWT (autenticação) e Bcrypt para hashear senhas
-- [x] MongoDB (banco de dados)
+- [x] MySQL (Banco de Dados)
 - [x] TypeScript (tipagem para o Front-End)
 - [x] Node.js + Express (JavaScript para o Back-End)
 
