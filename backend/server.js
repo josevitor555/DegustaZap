@@ -1,40 +1,55 @@
-// import dotenv
+
+// Import dotenv
 import dotenv from "dotenv";
 dotenv.config();
 
-
-// import express
+// Import express
 import express from "express";
-
-// import connectMongo
-import connectMongo from "./connectToMongoDB/connect.js";
-
-// create express app
-const app = express();
 
 // Import cors
 import cors from "cors";
+
+// Import routs
+import authRoutes from "./routes/routes.js"
+
+// Import db
+import { db } from "./lib/database.js";
+
+// Create express app
+const app = express();
+
+// CORS Origin
 app.use(cors());
+
+// Express json format
 app.use(express.json());
 
-// Import auth routes
-import authRoutes from "./routes/routes.js";
-app.use("/api/auth", authRoutes);
+// Rout Text for Connect to MySql
+app.get("/connect-mysql", async(req, res) => {
+    try {
+        const [rows] = await db.query("SELECT * FROM usuarios");
 
-// Define a simple route
-app.get("/", (req, res) => {
-    res.send("Hello from server!");
+        if (rows.length === 0) {
+            console.log("No users found.");
+        } else {
+            console.log("Users found: ");
+            console.table(rows);
+        }
+
+        res.json(rows);
+    } catch (error) {
+        console.log("Error to connect with mysql.", error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
 });
 
-// Examples with /api/auth/
-// /api/auth/register
-// /api/auth/login
-// /api/auth/logout
+// Define main endpoint for the others endpoints
+app.use("/api", authRoutes);
 
-// Connect to MongoDB
-await connectMongo();
-
-// define port
+// Define port
 const port = process.env.PORT || 3000;
 
 // start server

@@ -26,6 +26,7 @@ const App = () => {
         
         {/* Route for home */}
         <Route path="/home" element={<Home />} />
+
         <Route path="*" element={<div>404 - Page not found</div>} />
       </Routes>
     </BrowserRouter>

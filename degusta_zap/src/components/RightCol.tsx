@@ -29,7 +29,7 @@ const RightCol = () => {
 
               <div className="user-info__name">
                 <h3 className="text-lg font-semibold"> Miranda </h3>
-                <p className="text-sm text-gray-500"> @Miranda - <span className="font-bold"> 10.000 vizualizações	 </span></p>
+                <p className="text-sm text-gray-500"> @Miranda - <span className="font-bold"> 10.000 vizualizações </span></p>
               </div>
 
             </div>
@@ -63,9 +63,15 @@ const RightCol = () => {
 
           {/* Description Post */}
           <div className="mt-4 description-post">
-            <p className="text-sm text-gray-500">
+            <div className="text-sm text-gray-500">
               <span className="font-bold"> @DegustaZap </span>, como sempre oferecendo as melhores ofertas de comida e bebidas para você! #DegustaZap #Ofertas #Comida #Bebida #Restaurante
-            </p>
+            </div>
+          </div>
+
+          {/* Comment section */}
+          <div className="mt-3 mb-2 flex gap-2">
+            <p className='text-sm font-semibold'> @josevitor555 </p>
+            <span className='text-sm font-light'> Muito bom! Atendimento super rápido e eficaz. :D </span>
           </div>
         </div>
       </div>

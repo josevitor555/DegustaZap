@@ -18,7 +18,7 @@ import { Card } from "../components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 
 // Componentes do Lucide React
-import { Eye, EyeOff, ArrowRight } from "lucide-react";
+import { Eye, EyeOff, ArrowRight, Lock } from "lucide-react";
 
 // Ícones do fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -57,16 +57,16 @@ const LeftCol = () => {
         // });
 
         try {
-            
+
             // Enviar credenciais para o servidor para autenticação
-            const response = await axios.post(`${apiUrl}/api/auth/login`, {
+            const response = await axios.post(`${apiUrl}/api/login`, {
                 email: signInEmail,
                 password: signInPassword
             });
             console.log(signUpEmail, signInPassword);
 
             // Salvar o token no localStorage
-            localStorage.setItem("tpken", response.data.token);
+            localStorage.setItem("token", response.data.token);
 
             // Redirecionar para a página inicial
             navigate("/home");
@@ -89,8 +89,8 @@ const LeftCol = () => {
         try {
 
             // Enviar uma requisição POST para o servidor para registrar o usuário
-            const response = await axios.post(`${apiUrl}/api/auth/register`, {
-                name: signUpName,
+            const response = await axios.post(`${apiUrl}/api/register`, {
+                username: signUpName,
                 email: signUpEmail,
                 password: signUpPassword
             });
@@ -99,7 +99,7 @@ const LeftCol = () => {
             localStorage.setItem("token", response.data.token);
 
             // Navegar para a página inicial após o cadastro bem-sucedido
-            navigate("/home")
+            navigate("/home");
         } catch (error) {
             console.log("Erro ao registrar usuário: ", error);
             alert("E-mail ou nome de usuário já existe. Tente novamente.");
@@ -112,12 +112,25 @@ const LeftCol = () => {
             <div className="bg-[#f5f5f5] p-6 w-full max-w-[600px] space-y-8 border-2 border-gray-200 rounded-lg">
 
                 {/* Cabeçalho */}
-                <div className="text-center space-y-2">
-                    <h1 className="text-3xl font-light text-gray-900">
-                        Bem Vindo ao <span className="text-[#1d1d1d]"> Degusta Zap </span>
-                    </h1>
-                    <p className="text-gray-600"> Acesse sua conta ou crie uma nova. </p>
+                <div className="text-center space-y-8">
+                    <div className="w-16 h-16 mx-auto bg-[#ea5455] rounded-2xl flex items-center justify-center">
+                        <Lock className="w-8 h-8 text-[#fafafa]" />
+                    </div>
+                    <div>
+                        <h1 className="text-3xl font-bold text-black"> Bem Vindo(a) ao DegustaZap </h1>
+                        <p className="text-[#1d1d1d] font-light mt-3"> Entre com sua conta ou crie uma. </p>
+                    </div>
                 </div>
+
+                {/* Divider
+                <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                        <div className="w-full border-t border-glass-border" />
+                    </div>
+                    <div className="relative flex justify-center text-sm">
+                        <span className="px-6 text-gray-300"> Cadastre-se ou </span>
+                    </div>
+                </div> */}
 
                 {/* Formulário de autenticação com abas */}
                 <Card className="p-2 border-0 bg-white/80 backdrop-blur-sm">
@@ -137,7 +150,7 @@ const LeftCol = () => {
                                 exit={{ opacity: 0, x: 20 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                
+
                                 {/* Formulário de Login */}
                                 <form onSubmit={handleSignIn} className="space-y-4">
                                     <Label htmlFor="signin-email" className="text-sm font-medium text-gray-700">
@@ -153,7 +166,7 @@ const LeftCol = () => {
                                             value={signInEmail}
                                             onChange={(e) => setSignInEmail(e.target.value)}
                                             placeholder="Entre com seu e-mail"
-                                            className="pl-10 h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200"
+                                            className="pl-10 h-12"
                                             required
                                         />
                                     </div>
@@ -173,7 +186,7 @@ const LeftCol = () => {
                                                 value={signInPassword}
                                                 onChange={(e) => setSignInPassword(e.target.value)}
                                                 placeholder="Entre com sua senha"
-                                                className="pl-10 pr-10 h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200"
+                                                className="pl-10 pr-10 h-12"
                                                 required
                                             />
                                             <Button
@@ -245,7 +258,7 @@ const LeftCol = () => {
                                                 value={signUpName}
                                                 onChange={(e) => setSignUpName(e.target.value)}
                                                 placeholder="Entre com seu nome"
-                                                className="pl-10 h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200"
+                                                className="pl-10 h-12"
                                                 required
                                             />
                                         </div>
@@ -265,7 +278,7 @@ const LeftCol = () => {
                                                 value={signUpEmail}
                                                 onChange={(e) => setSignUpEmail(e.target.value)}
                                                 placeholder="Entre com seu e-mail"
-                                                className="pl-10 h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200"
+                                                className="pl-10 h-12"
                                                 required
                                             />
                                         </div>
@@ -286,7 +299,7 @@ const LeftCol = () => {
                                                 value={signUpPassword}
                                                 onChange={(e) => setSignUpPassword(e.target.value)}
                                                 placeholder="Entre com sua senha"
-                                                className="pl-10 pr-10 h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200"
+                                                className="pl-10 pr-10 h-12"
                                                 required
                                             />
 

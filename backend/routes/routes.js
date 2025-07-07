@@ -2,7 +2,7 @@
 import express from "express";
 
 // Import auth controller
-import { register, login, logout } from "../controllers/authController.js";
+import { register, login, logoutAccount, home } from "../controllers/authController.js";
 
 // Import Verify token
 import verifyToken from "../middlewares/authMiddleware.js";
@@ -11,12 +11,15 @@ import verifyToken from "../middlewares/authMiddleware.js";
 const router = express.Router();
 
 // Register a new user
-router.post("/register", register);
+router.post("/register", register); // POST http://localhost/api/register (Test from Postman)
 
 // Login a user
-router.post("/login", login);
+router.post("/login", login); // POST http://localhost/api/login (Test from Postman)
 
 // Logout a user
-router.post("/logout", verifyToken, logout);
+router.delete("/logoutAccount", verifyToken, logoutAccount); // DELETE http://localhost/api/logoutAccount (Test from Postman)
+
+// Protected Route
+router.get("/home", verifyToken, home);
 
 export default router;
