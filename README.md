@@ -33,7 +33,6 @@ DegustaZap é uma aplicação web feita em React que permite ao usuário escolhe
 - [x] MySQL (Banco de Dados)
 - [x] mysql2 (para conecção com banco de dados)
 - [x] TypeScript (tipagem para o Front-End)
-- [x] JavaScript para o Back-End
 - [x] Node.js + Express (JavaScript para o Back-End)
 
 ---
