@@ -69,7 +69,7 @@ const RightCol = () => {
           </div>
 
           {/* Comment section */}
-          <div className="mt-3 mb-2 flex gap-2">
+          <div className="mt-2 mb-2 flex gap-2">
             <p className='text-sm font-semibold'> @josevitor555 </p>
             <span className='text-sm font-light'> Muito bom! Atendimento super rápido e eficaz. :D </span>
           </div>

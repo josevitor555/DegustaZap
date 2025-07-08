@@ -40,7 +40,7 @@ const LeftCol = () => {
     const [signInEmail, setSignInEmail] = useState("");
     const [signInPassword, setSignInPassword] = useState("");
 
-    // Estado do Formulário de Cadastro
+    // Estados do Formulário de Cadastro
     const [signUpName, setSignUpName] = useState("");
     const [signUpEmail, setSignUpEmail] = useState("");
     const [signUpPassword, setSignUpPassword] = useState("");
@@ -152,33 +152,37 @@ const LeftCol = () => {
                             >
 
                                 {/* Formulário de Login */}
-                                <form onSubmit={handleSignIn} className="space-y-4">
-                                    <Label htmlFor="signin-email" className="text-sm font-medium text-gray-700">
-                                        Seu E-mail
-                                    </Label>
+                                <form onSubmit={handleSignIn} className="space-y-6">
 
-                                    <div className="relative">
-                                        {/* <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" /> */}
-                                        <FontAwesomeIcon icon={faEnvelope} className="absolute left-3 top-4 h-5 w-5 text-gray-400" />
-                                        <Input
-                                            id="signin-email"
-                                            type="email"
-                                            value={signInEmail}
-                                            onChange={(e) => setSignInEmail(e.target.value)}
-                                            placeholder="Entre com seu e-mail"
-                                            className="pl-10 h-12"
-                                            required
-                                        />
-                                    </div>
-
-                                    {/* Campo de Senha */}
-                                    <div className="space-y-4">
-                                        <Label htmlFor="signin-password" className="text-sm font-medium text-gray-700">
-                                            Sua Senha
+                                    {/* Campo de E-mail */}
+                                    <div className="space-y-2">
+                                        <Label htmlFor="signin-name" className="text-sm font-medium text-gray-700">
+                                            Digite seu E-mail
                                         </Label>
 
                                         <div className="relative">
-                                            {/* <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" /> */}
+                                            {/* <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" /> */}
+                                            <FontAwesomeIcon icon={faUser} className="absolute left-3 top-4 h-5 w-5 text-gray-400" />
+                                            <Input
+                                                id="signin-email"
+                                                type="text"
+                                                value={signInEmail}
+                                                onChange={(e) => setSignInEmail(e.target.value)}
+                                                placeholder="Entre com seu e-mail"
+                                                className="pl-10 h-12"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Campo de Senha */}
+                                    <div className="space-y-2">
+                                        <Label htmlFor="signin-password" className="text-sm font-medium text-gray-700">
+                                            Digite sua senha
+                                        </Label>
+
+                                        <div className="relative">
+                                            {/* <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" /> */}
                                             <FontAwesomeIcon icon={faLock} className="absolute left-3 top-4 h-5 w-5 text-gray-400" />
                                             <Input
                                                 id="signin-password"
@@ -186,9 +190,10 @@ const LeftCol = () => {
                                                 value={signInPassword}
                                                 onChange={(e) => setSignInPassword(e.target.value)}
                                                 placeholder="Entre com sua senha"
-                                                className="pl-10 pr-10 h-12"
+                                                className="pl-10 h-12"
                                                 required
                                             />
+
                                             <Button
                                                 variant="ghost"
                                                 type="button"
@@ -204,30 +209,25 @@ const LeftCol = () => {
                                         </div>
                                     </div>
 
-                                    {/* Lembrar-me e Esqueceu a senha */}
-                                    <div className="flex items-center justify-between">
-                                        <label className="flex items-center space-x-2 text-sm">
-                                            <input
-                                                type="checkbox"
-                                                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500/20 cursor-pointer"
-                                            />
-                                            <span className="text-gray-600">Lembrar-me</span>
-                                        </label>
-
-                                        <a href="#" className="text-sm text-blue-600 hover:text-blue-700 transition-colors">
-                                            Esqueceu sua senha?
-                                        </a>
+                                    {/* Termos e Condições */}
+                                    <div className="flex items-center space-x-2">
+                                        <input
+                                            type="checkbox"
+                                            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500/20 mt-0.5 cursor-pointer"
+                                            required
+                                        />
+                                        <span className="text-gray-600"> Li e concordo com os <a href="#" className="text-blue-600 hover:text-blue-700 transition-colors hover:underline"> Termos e Condições </a></span>
                                     </div>
 
                                     {/* Botão de Envio */}
                                     <button
                                         type="submit"
-                                        className="w-full h-12 bg-[#ea5455] text-white text-lg font-medium transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] group cursor-pointer flex items-center justify-center rounded-full"
+                                        className="w-full h-12 bg-[#ea5455] text-white text-lg font-medium transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] group cursor-pointer rounded-full"
                                     >
-                                        Entrar
-                                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                        Entrar para a página principal
                                     </button>
                                 </form>
+
                             </motion.div>
                         </TabsContent>
 
@@ -244,7 +244,7 @@ const LeftCol = () => {
                                 <form onSubmit={handleSignUp} className="space-y-6">
 
                                     {/* Campo de Nome */}
-                                    <div className="space-y-4">
+                                    <div className="space-y-2">
                                         <Label htmlFor="signup-name" className="text-sm font-medium text-gray-700">
                                             Digite seu nome
                                         </Label>
@@ -269,6 +269,7 @@ const LeftCol = () => {
                                         <Label htmlFor="signup-email" className="text-sm font-medium text-gray-700">
                                             Digite seu e-mail
                                         </Label>
+
                                         <div className="relative">
                                             {/* <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" /> */}
                                             <FontAwesomeIcon icon={faEnvelope} className="absolute left-3 top-4 h-5 w-5 text-gray-400" />
@@ -336,6 +337,7 @@ const LeftCol = () => {
                                         Criar conta
                                     </button>
                                 </form>
+
                             </motion.div>
                         </TabsContent>
                     </Tabs>
