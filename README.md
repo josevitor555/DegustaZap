@@ -4,8 +4,7 @@
 DegustaZap é uma aplicação web feita em React que permite ao usuário escolher produtos por categorias, montar um carrinho e finalizar o pedido via WhatsApp — sem precisar de sistema de pagamento. Ela ainda conta com um chatbot com IA, que responde dúvidas, orienta o usuário e torna o processo de compra mais fluido e inteligente.
 
 ### Imagem (Preview)
-![degusta_zap](https://github.com/user-attachments/assets/77d3abb6-c603-4d9c-8a2f-5057d974e0f2)
-
+![Captura de tela 2025-07-07 104757](https://github.com/user-attachments/assets/c9f321e9-0574-4849-8464-7bdd92c817ab)
 
 ### Projeto Open Source
 #### Aplicação web para facilitar pedidos via WhatsApp para pequenos comerciantes.
@@ -17,19 +16,21 @@ DegustaZap é uma aplicação web feita em React que permite ao usuário escolhe
 - Carrinho com adição, remoção e ajuste de quantidade
 - Preço total atualizado em tempo real
 - Finalização do pedido via WhatsApp com mensagem formatada
-- Login e cadastro com autenticação JWT
+- [x] Login e cadastro com MySQL utilizando o JWT
 - Futuro assistente virtual com IA para ajudar na navegação e dúvidas
 
 ---
 
 ### Tecnologias (Stack usada)
 - [x] React (interface)
-- [x] TailwindCSS (estilo rápido e responsivo)
+- [x] TailwindCSS (Estilo rápido e responsivo)
+- [x] Shadcn UI (Componentes extras)
 - [x] Lucide React e Font Awesome (ícones)
 - [x] React Router Dom (rotas)
 - [x] WhatsApp Web URL API (finalização do pedido)
 - [x] JWT (autenticação) e Bcrypt para hashear senhas
 - [x] MySQL (Banco de Dados)
+- [x] mysql2 (para conecção com banco de dados)
 - [x] TypeScript (tipagem para o Front-End)
 - [x] Node.js + Express (JavaScript para o Back-End)
 
